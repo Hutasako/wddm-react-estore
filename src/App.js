@@ -157,6 +157,7 @@ function App() {
         'favorite': 'true',
     },
 ]
+    console.log(`App.js: ${products}`)
   return (
     <Store data={products}/>
   );
