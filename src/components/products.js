@@ -8,9 +8,12 @@ const Products = ({data}) => {
     const ProductsDisplay = data.map((product) => <SingleProduct key={product.id} data={product}/>)
 
     return (
-        <div>
+        <section className="results">
+            <h2 className="subheading">
+                Results
+            </h2>
             {ProductsDisplay}
-        </div>
+        </section>
     )
 }
 

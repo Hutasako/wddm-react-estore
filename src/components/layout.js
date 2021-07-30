@@ -6,8 +6,15 @@ const Layout = ({children}) => {
     return (
         <div className="layout">
             <Header/>
+            
+            <main className="top-level container products">
+            <header className="heading">
+            <div className="white">
 
-            <main className="top-level container">
+            </div>
+            <h1>Our products</h1>
+            
+            </header>
                 {children}
             </main>
             

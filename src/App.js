@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import Store from './pages/store'
 
@@ -160,7 +161,10 @@ function App() {
     console.log(`App.js: ${products}`)
   return (
     <Store data={products}/>
-  );
+    // <Router>
+    //     <Route></Route>
+    // </Router>
+  )
 }
 
 export default App;
