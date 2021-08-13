@@ -9,10 +9,10 @@ const Products = ({data}) => {
     const [currentPage, setCurrentPage] = useState(1)
     const pageSize = 5
 
-    const handleChange = (event,value) => {
+    const handlePageChange = (event,value) => {
         setCurrentPage(value)
     }
-    
+
     const start = (currentPage - 1) * pageSize
     const end = start + pageSize
 
@@ -29,7 +29,7 @@ const Products = ({data}) => {
             </h2>
             {ProductsDisplay}
             <div className="pagination-wrapper">
-                <Pagination  count={numberOfPages} onChange={handleChange}/>
+                <Pagination  count={numberOfPages} onChange={handlePageChange}/>
             </div>
         </section>
     )
