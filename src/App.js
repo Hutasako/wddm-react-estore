@@ -1,11 +1,24 @@
+import React, {useState, createContext} from 'react';
 import logo from './logo.svg';
+import UserContext from './contexts/usercontext'
+import CartContext from './contexts/cartcontext'
+import ProductsContext from './contexts/productscontext'
+
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import Store from './pages/store'
 
 function App() {
-
-  const products = [
+    const userData = {
+        'name': 'John',
+        'favorites' : [],
+    }
+    const cartData = [{
+        'itemName' : 'Test',
+        'quantity' : 1,
+        'price' : 25,
+    }]
+    const productsData = [
     {
         'id' : '1',
         'name': 'Jabba the Huff',
@@ -158,13 +171,27 @@ function App() {
         'favorite': 'true',
     },
 ]
-    console.log(`App.js: ${products}`)
-  return (
-    <Store data={products}/>
-    // <Router>
-    //     <Route></Route>
-    // </Router>
-  )
+
+    const [userState, setUserState] = useState(userData);
+
+    const [cartState, setCartState] = useState(cartData);
+
+    const [productsState, setProductsState] = useState(productsData);
+    console.log(`App.js: ${productsData}`)
+
+    return (
+        <UserContext.Provider value={userState}>
+            <CartContext.Provider value={cartState}>
+                <ProductsContext.Provider value={productsState}>
+                    <Store data={productsData}/>
+                {/*  <Router>
+                    <Route></Route>
+                </Router> */}
+                </ProductsContext.Provider>
+            </CartContext.Provider>
+        </UserContext.Provider>
+
+    )
 }
 
 export default App;
