@@ -19,9 +19,9 @@ const Products = ({data}) => {
     const numberOfPages = Math.ceil(data.length/pageSize)
 
     const ProductsDisplay = data.slice(start, end).map((product) => <SingleProduct key={product.id} data={product}/>)
-    console.log("Products!")
-    console.log(`${currentPage}`)
-    console.log(ProductsDisplay)
+    // console.log("Products!")
+    // console.log(`${currentPage}`)
+    // console.log(ProductsDisplay)
     return (
         <section className="results">
             <h2 className="subheading">
@@ -29,7 +29,7 @@ const Products = ({data}) => {
             </h2>
             {ProductsDisplay}
             <div className="pagination-wrapper">
-                <Pagination  count={numberOfPages} onChange={handlePageChange}/>
+            <Pagination  count={numberOfPages} onChange={handlePageChange}/>
             </div>
         </section>
     )

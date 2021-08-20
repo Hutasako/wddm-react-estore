@@ -5,7 +5,7 @@ import Products from '../components/products';
 import ProductsContext from '../contexts/productscontext';
 import '../css/style.css';
 import '../css/reset.css';
-import '../css/product.css';
+// import '../css/product.css';
 
 // import SearchFilter from 'components/SearchFilter';
 // // import Products from 'components/Products';
@@ -69,7 +69,7 @@ const Store = ({data}) => {
                 <fieldset onChange={typeChangeSearch}>
                   <legend>Type</legend>
                   <ul className="filter-list">
-                    <li><input type="radio" name="producttype" value="" id="All" checked/> <label htmlFor="All">Show All</label></li>
+                    <li><input type="radio" name="producttype" value="" id="All" /> <label htmlFor="All">Show All</label></li>
                     <li><input type="radio" name="producttype" value="Cartridge" id="Cartridge"/> <label htmlFor="Cartridge">Cartridge</label></li>
                     <li><input type="radio" name="producttype" value="Gummy" id="Gummy"/> <label htmlFor="Gummy">Gummy</label></li>
                     <li><input type="radio" name="producttype" value="Flower" id="Flower"/> <label htmlFor="Flower">Flower</label></li>
